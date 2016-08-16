@@ -1,0 +1,20 @@
+<ion-view>
+  <ion-content class="content-stable padding as-footer" padding="true" on-swipe-left="Ctrl.hideTime = false" on-swipe-right="Ctrl.hideTime = true">
+
+    <div ng-repeat="message in Ctrl.messages track by $index | limitTo:-10" class="messages">
+      <div class='message-wrapper' ng-class="{me: message.createdBy === Ctrl.myId, them: message.createdBy !== Ctrl.myId}">
+        <div class='circle-wrapper'><img ng-src="{{message.userImage || 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y&&d=mm'}}" alt="Image"></div>
+        <div class='text-wrapper'>{{message.message}}</div>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+    <label class="item-input-wrapper">
+     <input type="text" placeholder="Type your message" on-return="Ctrl.addThing(); closeKeyboard()" ng-model="Ctrl.tmpMessage" on-focus="inputUp()" on-blur="inputDown()" />
+    </label>
+    <button class="button button-icon icon ion-android-send footer-btn" ng-click="Ctrl.addThing()">
+    </button>
+  </ion-footer-bar>
+</ion-view>

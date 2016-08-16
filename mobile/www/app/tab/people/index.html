@@ -1,0 +1,17 @@
+<ion-view view-title="People">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="user in Ctrl.users" type="item-text-wrap">
+        <img ng-src="{{message.image_url || 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y&&d=mm'}}" alt="Image">
+        <h2>{{user.name}}</h2>
+        <p>{{user.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-positive" ng-click="Ctrl.addFriend(user)">
+          Add
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+</ion-view>

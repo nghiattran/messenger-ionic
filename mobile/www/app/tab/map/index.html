@@ -1,0 +1,21 @@
+<ion-view view-title="Map">
+  <ion-content>
+    <div id="map" data-tap-disabled="true"></div>
+    <div>
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="Ctrl.searchText">
+      </label>
+    </div>
+    <ion-list>
+      <ion-item class="item-avatar item-icon-right" ng-repeat="userLocation in Ctrl.userLocations | filter:Ctrl.searchText" type="item-text-wrap" ng-click="Ctrl.nameOnClick(userLocation)">
+        <img ng-src="{{userLocation.image_url || 'http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?f=y&&d=mm'}}" alt="Image">
+        <h2>{{userLocation.name}}</h2>
+        <p>{{userLocation.address}}</p>
+        <span am-time-ago="userLocation.position.locationCreatedAt"></span>
+
+        <!-- <a href="" ng-click=""><i class="icon ion-ios-information-outline"></i></a> -->
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

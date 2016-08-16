@@ -1,0 +1,24 @@
+<ion-view view-title="Call" name="call-view">
+  <ion-content scroll="false">
+  
+    <div id="video-container" ng-show="Ctrl.callState.myState.state === 'joined'">
+      <div id="their-video-container">
+        <div id="their-video" autoplay></div>
+      </div>
+
+      <div id="my-video-container" on-drag="Ctrl.videoOnDrag($event)" ng-style="Ctrl.draggedStyle">
+        <video id="my-video" muted="true" autoplay></video>
+      </div>
+    </div>
+
+    <div class="call-hangup-container">
+      <img class="call-button" src="https://lh3.googleusercontent.com/RA2TYPdwn1Rckr41wfHlIMtNQd_ruRVPrxrObhr5b5mNtUDvVg5QKOmhUBwbJq4RQg=w170" ng-click="Ctrl.hangup()">
+    </div>
+
+
+    <div class="call-hangup-container">
+      <img class="call-button call-hangup-button" ng-click="Ctrl.hangup()">
+    </div>
+
+  </ion-content>
+</ion-view>

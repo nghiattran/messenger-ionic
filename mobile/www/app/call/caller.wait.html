@@ -1,0 +1,24 @@
+<ion-view view-title="Call" name="call-view">
+  <ion-content scroll="false">
+    <div class="call call-wallpaper">
+      <div class="call-info-container">
+        <div class="call-icon">
+          <img src="{{Ctrl.callState.myState.callObj.aCall.calleeImageUrl || 'https://pixabay.com/static/uploads/photo/2016/04/15/18/05/computer-1331579_960_720.png'}}">
+
+        </div>
+
+        <div class="call-peer-name">
+          <div class="call-calling">
+            <p>calling </p><ion-spinner icon="dots"></ion-spinner>
+          </div>
+          <p>{{Ctrl.callState.myState.callObj.aCall.calleeName}}</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="call-hangup-container">
+      <img class="call-button call-hangup-button" ng-click="Ctrl.hangup()">
+    </div>
+  </ion-content>
+</ion-view>
